@@ -1,5 +1,5 @@
-import React from 'react'; //
-import { TextProps } from './text.types';
+import React from 'react';
+import { TextProps } from './Text.types';
 import styles from './Text.module.scss'
 
 export const Text = ({ children, size = "normal", tag = "p" }: TextProps) => {
