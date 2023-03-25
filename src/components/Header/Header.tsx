@@ -2,6 +2,7 @@ import { HeaderProps } from '@/components/Header/Header.types';
 import React from 'react';
 import styles from './Header.module.scss';
 import { Text } from '@/components/Text/Text';
+import Link from 'next/link';
 
 export const Header = ({ navItems }: HeaderProps) => {
     return (
@@ -15,9 +16,9 @@ export const Header = ({ navItems }: HeaderProps) => {
                         return (
                             <li key={i} className={styles.navigationItem}>
                                 <Text>
-                                    <a href={el.url} className={styles.navigationLink}>
+                                    <Link href={el.url} className={styles.navigationLink}>
                                         {el.name}
-                                    </a>
+                                    </Link>
                                 </Text>
                             </li>
                         )
@@ -26,9 +27,9 @@ export const Header = ({ navItems }: HeaderProps) => {
             </nav>
             <ul className={styles.navigationRight}>
                 <li>
-                    <a href='/register' className={styles.button}>
+                    <Link href='/register' className={styles.button}>
                         Register
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </div>
