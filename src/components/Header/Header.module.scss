@@ -1,0 +1,57 @@
+@use '../../styles/_globals' as global; 
+@use '../../styles/_responsive' as rwd; 
+@use '../../styles/_colors' as colors; 
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logoWrapper {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.navigationInner {
+    width: 75%;
+    margin-left: 78px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    @include global.list-reset;
+    @include rwd.breakpoint(small) {
+        display: none;
+    }
+}
+
+.navigationItem {
+    flex-grow: 1;
+    font-size: 18px;
+}
+
+.registerButtonWrapper {
+    @include rwd.breakpoint(small) {
+        display: none;
+    }
+}
+
+.navigationRight {
+    @include global.list-reset;
+    @include rwd.breakpoint(small) {
+        display: none;
+    }
+}
+
+.button {
+    background: rgba(50, 50, 51, 1);
+    border-radius: 26px;
+    padding: 19px 43px 15px 32px;
+    font-size: 19px;
+    cursor: pointer;
+}

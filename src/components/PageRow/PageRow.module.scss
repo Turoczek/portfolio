@@ -1,0 +1,11 @@
+@use '../../styles/_responsive' as rwd; 
+@use '../../styles/_colors' as colors; 
+
+.wrapper {
+    display: flex;
+}
+
+.inverted {
+    background-color: colors.$black;
+    color: colors.$white;
+}

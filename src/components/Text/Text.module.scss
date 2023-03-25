@@ -1,0 +1,32 @@
+@use '../../styles/_responsive' as rwd; 
+
+.small {
+    size: 10px;
+}
+
+.normal {
+    @include rwd.breakpoint(small) {
+        size: 12px;
+    }
+    @include rwd.breakpoint(medium) {
+        size: 22px;
+    }
+    @include rwd.breakpoint(large) {
+        size: 22px;
+    }
+}
+
+.big {
+    size: 14px;
+}
+
+$breakpoints: (
+	"phone" : "(max-width: 360px)",
+	"large-phone" : "(max-width: 480px)",
+	"small-tablet" : "(max-width: 600px)",
+	"tablet" : "(max-width: 768px)",
+	"large-tablet" : "(max-width: 1024px)",
+	"laptop" : "(max-width: 1280px)",
+	"large-laptop" : "(max-width: 1366px)",
+	"ultra" : "(max-width: 1600px)",
+);
