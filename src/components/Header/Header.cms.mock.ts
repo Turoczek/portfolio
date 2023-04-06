@@ -5,32 +5,12 @@ export type MockHeaderModel = {
 
 const MockHeader: MockHeaderModel = [
     {
-        name: 'Project',
-        url: '/project',
+        name: 'Discord bot',
+        url: '/discordbot',
     },
     {
-        name: 'Partners',
-        url: '/partners',
-    },
-    {
-        name: 'FAQ',
-        url: '/faq',
-    },
-    {
-        name: 'Masters',
-        url: '/masters',
-    },
-    {
-        name: 'Classes',
-        url: '/classes',
-    },
-    {
-        name: 'Course Experience',
-        url: '/courseexperience',
-    },
-    {
-        name: 'About us',
-        url: '/aboutus',
+        name: 'About me',
+        url: '/aboutme',
     },
 ];
 

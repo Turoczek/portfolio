@@ -1,24 +1,41 @@
 @use '../../styles/_responsive' as rwd; 
 
 .small {
-    size: 10px;
+    @include rwd.breakpoint(small) {
+        font-size: 10px;
+    }
+    @include rwd.breakpoint(medium) {
+        font-size: 16px;
+    }
+    @include rwd.breakpoint(large) {
+        font-size: 20px;
+    }
 }
 
 .normal {
     @include rwd.breakpoint(small) {
-        size: 12px;
+        font-size: 16px;
     }
     @include rwd.breakpoint(medium) {
-        size: 22px;
+        font-size: 28px;
     }
     @include rwd.breakpoint(large) {
-        size: 22px;
+        font-size: 32px;
     }
 }
 
-.big {
-    size: 14px;
+.large {
+    @include rwd.breakpoint(small) {
+        font-size: 24px;
+    }
+    @include rwd.breakpoint(medium) {
+        font-size: 40px;
+    }
+    @include rwd.breakpoint(large) {
+        font-size: 48px;
+    }
 }
+  
 
 $breakpoints: (
 	"phone" : "(max-width: 360px)",

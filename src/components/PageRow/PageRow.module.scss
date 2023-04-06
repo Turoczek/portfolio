@@ -1,11 +1,34 @@
 @use '../../styles/_responsive' as rwd; 
 @use '../../styles/_colors' as colors; 
+@use '../../styles/_globals' as settings; 
 
 .wrapper {
-    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    // box-sizing: border-box;
+
+    @include rwd.breakpoint(small) {
+        max-width: settings.$page-width;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    @include rwd.breakpoint(medium) {
+        max-width: settings.$page-width-medium;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @include rwd.breakpoint(large) {
+        max-width: settings.$page-width-large;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 }
 
 .inverted {
-    background-color: colors.$black;
+    background-color: colors.$primary;
     color: colors.$white;
+}
+
+.invertedInner {
+    composes: wrapper;
 }

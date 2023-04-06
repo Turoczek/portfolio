@@ -1,0 +1,40 @@
+@use '../../../styles/_responsive' as rwd; 
+@use '../../../styles/_colors' as colors; 
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    background-color: colors.$white;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    @include rwd.breakpoint(small) {
+        margin-top: -48px;
+        padding-bottom: 48px;
+    }
+    @include rwd.breakpoint(medium) {
+        margin-top: -72px;
+        padding-bottom: 72px;
+    }
+    @include rwd.breakpoint(large) {
+        margin-top: -96px;
+        padding-bottom: 96px;
+    }
+}
+
+.columnsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    box-shadow: 0 5px 5px 0 rgb(190, 184, 184);
+    border-radius: 20px;
+}
+
+.singleColumn {
+    padding: 16px;
+    border-right: 1px solid rgb(190, 184, 184);
+    &:last-child{
+        border: 0;
+    }
+}

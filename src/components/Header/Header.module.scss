@@ -6,33 +6,66 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 5px;
     width: 100%;
+    height: 80px;
+}
+
+.icon {
+    @include rwd.breakpoint(small) {
+        width: 80px;
+        height: 60px;
+        margin-left: -12px;
+    }
+    width: max-content;
+    height: 100%;
 }
 
 .logoWrapper {
+    @include rwd.breakpoint(small) {
+        width: 80px;
+        height: 60px;
+    }
     width: 100px;
-    height: 100px;
-    background-color: red;
-}
-
-.navigationInner {
-    width: 75%;
-    margin-left: 78px;
+    height: 80px;
+    cursor: pointer;
 }
 
 .navigation {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
     @include global.list-reset;
     @include rwd.breakpoint(small) {
         display: none;
     }
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 }
 
 .navigationItem {
     flex-grow: 1;
     font-size: 18px;
+    margin-left: 48px;
+}
+
+.navigationLink {
+    text-decoration: none;
+    position: relative;
+}
+
+.navigationLink::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    background-color: colors.$primary;
+    height: 2px;
+    border-radius: 10px;
+    transition: .3s ease-in-out;
+}
+
+.navigationLink:hover::after {
+    width: 100%;
 }
 
 .registerButtonWrapper {
@@ -54,4 +87,36 @@
     padding: 19px 43px 15px 32px;
     font-size: 19px;
     cursor: pointer;
+}
+
+.burger {
+    @include rwd.breakpoint(medium) {
+        display: none;
+    }
+    
+    @include rwd.breakpoint(large) {
+        display: none;
+    }
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40px;
+    height: 40px;
+    right: 18px;
+    top: 22px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: rgba(50, 50, 51, 0.1);
+    border-radius: 20px;
+}
+
+.burgerLine {
+    width: 20px;
+    height: 4px;
+    background-color: colors.$primary;
+    margin: 2px;
+    border-radius: 16px;
 }
