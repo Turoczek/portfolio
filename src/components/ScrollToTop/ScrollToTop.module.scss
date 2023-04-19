@@ -1,0 +1,40 @@
+@use '../../styles/_colors' as colors; 
+@use '../../styles/_responsive' as rwd; 
+
+.scrollToTopButtonContainer {
+    position: fixed;
+    right: 48px;
+    bottom: 40px;
+    @include rwd.breakpoint(small) {
+        right: 18px;
+        bottom: -42px;
+    }
+    @include rwd.breakpoint(medium) {
+        right: 50px;
+        bottom: -42px;
+    }
+}
+.scrollToTopButton {
+    width: 40px;
+    height: 40px;
+    right: 18px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: rgba(50, 50, 51, 0.1);
+    border-radius: 20px;
+    opacity: 0;
+    transition: visibility 0.6s linear, transform 0.3s ease-out, opacity 0.6s linear;
+    visibility: hidden;
+}
+
+.toggle {
+    opacity: 1;
+    visibility: visible;
+    @include rwd.breakpoint(small) {
+        transform: translateY(-68px);
+    }
+    @include rwd.breakpoint(medium) {
+        transform: translateY(-80px);
+    }
+}

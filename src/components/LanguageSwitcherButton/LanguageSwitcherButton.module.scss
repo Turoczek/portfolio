@@ -1,0 +1,49 @@
+@use '../../styles/_globals' as global; 
+@use '../../styles/_responsive' as rwd; 
+@use '../../styles/_colors' as colors; 
+@use '../../styles/_accessibility' as acc; 
+
+.changeLanguage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include acc.focus;
+}
+
+.toggleGroup {
+    display: flex;
+    justify-content: space-between;
+    width: 80px;        
+}
+
+.toggleItem {
+    color: colors.$white;
+    background-color: colors.$black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    &:first-child {
+        margin-right: 8px;
+    }
+    &[aria-checked='true'] {
+        background-color: colors.$primary;
+        border: 2px solid colors.$primary100;
+    }
+    @include acc.focus;
+}
+
+.buttonSwitcher {
+    display: flex;
+    flex-direction: row;
+    width: 60px;
+    margin-right: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    @include acc.focus;
+}
+
+.icon {
+    width: 100%;
+    height: 40px;
+}

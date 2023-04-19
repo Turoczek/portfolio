@@ -1,6 +1,3 @@
+import { NextPageContext } from "next";
 
-import { NextPageContext } from 'next';
-
-export interface Context extends NextPageContext {
-    // any modifications to the default context, e.g. query types
-  }
+export type Context = NextPageContext;

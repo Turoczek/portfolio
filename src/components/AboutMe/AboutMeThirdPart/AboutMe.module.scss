@@ -1,5 +1,6 @@
 @use '../../../styles/_responsive' as rwd; 
 @use '../../../styles/_colors' as colors; 
+@use '../../../styles/_globals' as global; 
 
 .wrapper {
     display: flex;
@@ -25,16 +26,71 @@
 
 .columnsContainer {
     display: flex;
-    flex-direction: row;
-    flex-grow: 1;
     box-shadow: 0 5px 5px 0 rgb(190, 184, 184);
     border-radius: 20px;
+    @include rwd.breakpoint(small) {
+        flex-direction: column;
+        box-shadow: none;
+    }
 }
 
 .singleColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 16px;
+    flex: 1 1 0;
     border-right: 1px solid rgb(190, 184, 184);
-    &:last-child{
-        border: 0;
+    @include rwd.breakpoint(small) {
+        border: 1px solid rgb(190, 184, 184);
+        &:first-child {
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+        }
+        &:last-child{
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
     }
+    @include rwd.breakpoint(medium) {
+        &:last-child{
+            border: 0;
+        }
+    }
+    @include rwd.breakpoint(large) {
+        &:last-child{
+            border: 0;
+        }
+    }
+}
+
+.listSkills {
+    @include global.list-reset;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.icon {
+    width: 72px;
+    height: 72px;
+}
+
+.listSingleRow {
+    margin-bottom: 16px;
+
+    @include rwd.breakpoint(small) {
+        margin-bottom: 8px;
+    }
+}
+
+.iconSkill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1px;
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
 }

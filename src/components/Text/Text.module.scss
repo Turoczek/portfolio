@@ -1,26 +1,39 @@
 @use '../../styles/_responsive' as rwd; 
 
-.small {
+.xsmall {
     @include rwd.breakpoint(small) {
         font-size: 10px;
     }
     @include rwd.breakpoint(medium) {
-        font-size: 16px;
+        font-size: 15px;
     }
     @include rwd.breakpoint(large) {
         font-size: 20px;
     }
 }
 
-.normal {
+
+.small {
     @include rwd.breakpoint(small) {
-        font-size: 16px;
+        font-size: 14px;
     }
     @include rwd.breakpoint(medium) {
-        font-size: 28px;
+        font-size: 21px;
     }
     @include rwd.breakpoint(large) {
-        font-size: 32px;
+        font-size: 28px;
+    }
+}
+
+.normal {
+    @include rwd.breakpoint(small) {
+        font-size: 18px;
+    }
+    @include rwd.breakpoint(medium) {
+        font-size: 27px;
+    }
+    @include rwd.breakpoint(large) {
+        font-size: 36px;
     }
 }
 
@@ -29,7 +42,7 @@
         font-size: 24px;
     }
     @include rwd.breakpoint(medium) {
-        font-size: 40px;
+        font-size: 36px;
     }
     @include rwd.breakpoint(large) {
         font-size: 48px;

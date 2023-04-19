@@ -1,0 +1,14 @@
+@use './_colors' as colors; 
+
+@mixin focus {
+    &:focus:not(:focus-visible) {
+        outline: 0;
+        box-shadow: none;
+      }
+    &:focus,
+    .focus-visible:focus:not(:focus-visible) {
+        outline: 0;
+        outline: 2px solid colors.$green100;
+        outline-offset: 2px;
+    }
+}

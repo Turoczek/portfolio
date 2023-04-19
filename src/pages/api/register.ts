@@ -1,23 +1,20 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-
+import type { NextApiRequest, NextApiResponse } from "next";
+// WILL BE DELETED
 type Data = {
-    statusCode: number;
-    message: string;
-  }
+  statusCode: number;
+  message: string;
+};
 
 export type RegisterModel = {
-    username: string;
-    email: string;
-    password: string;
-}
+  username: string;
+  email: string;
+  password: string;
+};
 
-const register = (
-    req: NextApiRequest,
-    res: NextApiResponse<Data>) => {
-
-    if(req.method === 'POST') {
-        res.json({statusCode: 200, message: 'Ok'});
-    }
-}
+const register = (req: NextApiRequest, res: NextApiResponse<Data>) => {
+  if (req.method === "POST") {
+    res.json({ statusCode: 200, message: "Ok" });
+  }
+};
 
 export default register;

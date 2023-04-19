@@ -1,4 +1,4 @@
 export type PageRowProps = {
-    children: React.ReactNode;
-    inverted?: boolean;
-  };
+  children: React.ReactNode;
+  inverted?: boolean;
+};

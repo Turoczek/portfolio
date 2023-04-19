@@ -1,17 +1,24 @@
-import Router from 'next/router'
+import React, { useContext } from "react";
+import Router from "next/router";
+import { PageRow } from "@/components";
+import { GlobalStateContext } from "@/providers/GlobalStateProvider";
+import { useActor } from "@xstate/react";
 
 const NotFoundPage = () => {
-    return <div>
-        <h1>
-            Error 404
-        </h1>
-        <h2>
-            Page will be added soon
-        </h2>
-        <button onClick={() => Router.back()}>
-            Go back
-        </button>
-    </div> 
-}
+  const globalServices = useContext(GlobalStateContext);
+  const { languageService } = globalServices;
+  const [state] = useActor(languageService);
+  const { back, errors } = state.context.labels;
+  // TODO
+  return (
+    <PageRow>
+      <h1>Error</h1>
+      <h2>{errors.wentWrong}</h2>
+      <button type="button" onClick={() => Router.back()}>
+        {back}
+      </button>
+    </PageRow>
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;
