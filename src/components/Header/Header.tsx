@@ -1,16 +1,21 @@
-import React, { FC, useContext } from "react";
+import React, { FC, useContext, useState } from "react";
 import Link from "next/link";
 import { Logo } from "@/assets/icons";
 import { GlobalStateContext } from "@/providers/GlobalStateProvider";
 import { useActor } from "@xstate/react";
+import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
 import { Text } from "../Text/Text";
 import { LanguageSwitcherButton } from "../LanguageSwitcherButton/LanguageSwitcherButton";
+
+const cx = classNames.bind(styles);
 
 export const Header: FC = () => {
   const globalServices = useContext(GlobalStateContext);
   const { languageService } = globalServices;
   const [state] = useActor(languageService);
+
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
   const { aboutMe, discordBot } = state.context.labels;
 
@@ -25,13 +30,22 @@ export const Header: FC = () => {
     },
   ];
 
+  const handleToggle = () => {
+    setIsBurgerOpen(!isBurgerOpen);
+  };
+
   return (
     <div className={styles.wrapper}>
       <Link href="/" className={styles.logoWrapper}>
         <Logo className={styles.icon} />
       </Link>
       <nav>
-        <ul className={styles.navigation}>
+        <ul
+          className={cx(
+            styles.navigation,
+            isBurgerOpen && styles.navigationOpen
+          )}
+        >
           {navItems.map((el, i) => {
             return (
               <li key={i} className={styles.navigationItem}>
@@ -45,13 +59,22 @@ export const Header: FC = () => {
           })}
         </ul>
 
-        <button type="button" className={styles.burger}>
+        <button
+          type="button"
+          onClick={handleToggle}
+          className={cx(styles.burger, isBurgerOpen && styles.burgerOpen)}
+        >
           <span className={styles.burgerLine} />
           <span className={styles.burgerLine} />
           <span className={styles.burgerLine} />
         </button>
       </nav>
-      <ul className={styles.navigationRight}>
+      <ul
+        className={cx(
+          styles.navigationRight,
+          state.matches("active") && styles.navigationRightOpen
+        )}
+      >
         <li>
           <LanguageSwitcherButton />
         </li>

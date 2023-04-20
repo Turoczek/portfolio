@@ -13,7 +13,12 @@
 .toggleGroup {
     display: flex;
     justify-content: space-between;
-    width: 80px;        
+    width: 80px;
+    
+    @include rwd.breakpoint(small) {
+        flex-direction: column;
+        width: 32px;
+    }
 }
 
 .toggleItem {
@@ -24,6 +29,10 @@
     cursor: pointer;
     &:first-child {
         margin-right: 8px;
+        @include rwd.breakpoint(small) {
+            margin-right: 0;
+            margin-bottom: 4px;
+        }
     }
     &[aria-checked='true'] {
         background-color: colors.$primary;

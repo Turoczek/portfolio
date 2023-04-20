@@ -41,10 +41,28 @@
     justify-content: center;
     flex-direction: row;
 
-    @include global.list-reset;
     @include rwd.breakpoint(small) {
         display: none;
     }
+    @include global.list-reset;
+}
+
+.navigationOpen {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+    @include rwd.breakpoint(small) {
+        position: absolute;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        right: 0px;
+        top: 80px;
+        background-color: colors.$primary;
+        color: colors.$white;
+    };
+    transition: .3s ease-in-out;
 }
 
 .navigationItem {
@@ -62,7 +80,7 @@
 .navigationLink::after {
     content: '';
     position: absolute;
-    bottom: -px;
+    bottom: -2px;
     left: 0;
     width: 0%;
     background-color: colors.$primary;
@@ -84,7 +102,16 @@
 .navigationRight {
     @include global.list-reset;
     @include rwd.breakpoint(small) {
-        display: none;
+        display: flex;
+        margin-right: 40px;
+    }
+}
+
+.navigationRightOpen {
+    composes: navigationRight;
+    @include rwd.breakpoint(small) {
+        display: flex;
+        margin-right: 48px;
     }
 }
 
@@ -117,6 +144,24 @@
     }
     
     @include rwd.breakpoint(large) {
+        display: none;
+    }
+    transition: transform 0.4s ease-in-out;
+}
+
+.burgerOpen {
+    composes: burger;
+
+    transform: rotate(225deg);
+    transition: transform 0.4s ease-in-out;
+
+    :first-child {
+        transform: rotate(-90deg) translateX(-4px);
+    }
+    :nth-child(2) {
+        transform: rotate(-180deg) translateY(4px);
+    }
+    :nth-child(3) {
         display: none;
     }
 }
