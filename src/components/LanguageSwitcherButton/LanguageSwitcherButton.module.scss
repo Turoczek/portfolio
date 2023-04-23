@@ -22,8 +22,8 @@
 }
 
 .toggleItem {
-    color: colors.$white;
-    background-color: colors.$black;
+    color: colors.$black;
+    background-color: colors.$white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -35,8 +35,9 @@
         }
     }
     &[aria-checked='true'] {
+        color: colors.$white;
         background-color: colors.$primary;
-        border: 2px solid colors.$primary100;
+        border: 2px solid colors.$black;
     }
     @include acc.focus;
 }

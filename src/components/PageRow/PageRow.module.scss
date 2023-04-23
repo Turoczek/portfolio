@@ -32,3 +32,18 @@
 .invertedInner {
     composes: wrapper;
 }
+
+.paddingTopBottom {
+    @include rwd.breakpoint(small) {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    @include rwd.breakpoint(medium) {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+    @include rwd.breakpoint(large) {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+}

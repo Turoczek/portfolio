@@ -15,17 +15,29 @@
 
 .small {
     @include rwd.breakpoint(small) {
-        font-size: 14px;
+        font-size: 12px;
     }
     @include rwd.breakpoint(medium) {
-        font-size: 21px;
+        font-size: 18px;
     }
     @include rwd.breakpoint(large) {
-        font-size: 28px;
+        font-size: 24px;
     }
 }
 
 .normal {
+    @include rwd.breakpoint(small) {
+        font-size: 15px;
+    }
+    @include rwd.breakpoint(medium) {
+        font-size: 22px;
+    }
+    @include rwd.breakpoint(large) {
+        font-size: 30px;
+    }
+}
+
+.large {
     @include rwd.breakpoint(small) {
         font-size: 18px;
     }
@@ -37,7 +49,7 @@
     }
 }
 
-.large {
+.xlarge {
     @include rwd.breakpoint(small) {
         font-size: 24px;
     }

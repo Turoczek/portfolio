@@ -37,7 +37,12 @@ export const Header: FC = () => {
   return (
     <div className={styles.wrapper}>
       <Link href="/" className={styles.logoWrapper}>
-        <Logo className={styles.icon} />
+        <Logo
+          className={cx(
+            styles.icon,
+            isBurgerOpen && styles.iconWithNavigationOpen
+          )}
+        />
       </Link>
       <nav>
         <ul

@@ -10,10 +10,11 @@ export const AboutMeSecondPart: FC = () => {
     <div className={cx(styles.wrapper)}>
       <div className={cx(styles.introduction)}>
         <Text tag="h3">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita
-          nobis optio error porro architecto doloremque consectetur magni
-          nesciunt officiis hic deleniti, corrupti cumque iure quasi provident
-          minima blanditiis suscipit perferendis?
+          Odkąd pamiętam świat informatyki wzbudzał moje zainteresownie. W 2021
+          ukończyłem studia I stopnia na kierunku Informatyka. Od tamtej pory
+          rozwijam się zawodowo jako programista. Jestem osobą rzetelną,
+          odpowiedzialną, lubiącą nowe wyzwania. W dzisiejszych czasach ciągły
+          rozwój w dziedzinie IT stanowi klucz do osiągnięcia sukcesu.
         </Text>
       </div>
     </div>

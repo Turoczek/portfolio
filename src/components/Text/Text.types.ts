@@ -13,5 +13,5 @@ export type TextProps = {
     | "i"
     | "span"
     | "li";
-  size?: "xsmall" | "small" | "normal" | "large";
+  size?: "xsmall" | "small" | "normal" | "large" | "xlarge";
 };

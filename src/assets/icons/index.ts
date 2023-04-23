@@ -9,3 +9,5 @@ export { default as Box } from "./box.svg";
 export { default as Tools } from "./tools.svg";
 export { default as LangSwitcher } from "./lang-switcher.svg";
 export { default as ArrowTop } from "./arrow-top.svg";
+export { default as Exp } from "./exp.svg";
+export { default as Discord } from "./discord.svg";

@@ -6,3 +6,4 @@ export { PageRow } from "./PageRow/PageRow";
 export { Text } from "./Text/Text";
 export { ScrollToTop } from "./ScrollToTop/ScrollToTop";
 export { LanguageSwitcherButton } from "./LanguageSwitcherButton/LanguageSwitcherButton";
+export { Discord } from "./Discord/Discord";

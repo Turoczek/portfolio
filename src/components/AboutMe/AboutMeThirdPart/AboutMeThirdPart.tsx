@@ -2,7 +2,7 @@ import React, { FC, useContext } from "react";
 import classNames from "classnames/bind";
 import { GlobalStateContext } from "@/providers/GlobalStateProvider";
 import { useActor } from "@xstate/react";
-import { Box, Tools } from "@/assets/icons";
+import { Box, Tools, Exp } from "@/assets/icons";
 import { Text } from "@/components/Text/Text";
 import styles from "./AboutMe.module.scss";
 
@@ -61,7 +61,7 @@ export const AboutMeThirdPart: FC = () => {
           </ul>
         </div>
         <div className={cx(styles.singleColumn)}>
-          <Tools className={styles.icon} />
+          <Exp className={styles.icon} />
           <Text tag="h4" size="normal">
             {exp}
           </Text>
