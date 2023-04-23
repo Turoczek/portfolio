@@ -41,7 +41,7 @@ export const Discord: FC = () => {
           has log channel.
         </Text>
       </PageRow>
-      <PageRow defaultPaddingTopBottom>TBC</PageRow>
+      <PageRow defaultPaddingTopBottom>TODOO</PageRow>
     </>
   );
 };
