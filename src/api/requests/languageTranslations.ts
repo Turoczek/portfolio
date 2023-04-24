@@ -47,7 +47,7 @@ const translations: translationOptions = {
       subTitle:
         "New challenges drive me to work. \n React and Node are my favorites.",
       description:
-        "Since I remember, the IT world has aroused my interest. In 2021, I graduated my Bachelor's degree in IT. Since then, I have been developing as a programmer. I am a reliable, responsible person who likes new challenges. Nowadays, the continuous development of new technologies is part of the programmers' success story.",
+        "Since I remember, the IT world has aroused my interest. In 2021, I graduated Bachelor's degree in IT. Since then, I have been developing as a programmer. I am a reliable, responsible person who likes new challenges. Nowadays, the continuous development of new technologies is part of the programmers' success story.",
       exp: "Experience",
       languages: "Languages",
       skills: "Skills",
