@@ -1,6 +1,11 @@
 @use '../../styles/_responsive' as rwd; 
 
+.text { 
+    white-space: pre-line
+}
+
 .xsmall {
+    composes: text;
     @include rwd.breakpoint(small) {
         font-size: 10px;
     }
@@ -14,6 +19,7 @@
 
 
 .small {
+    composes: text;
     @include rwd.breakpoint(small) {
         font-size: 12px;
     }
@@ -26,6 +32,7 @@
 }
 
 .normal {
+    composes: text;
     @include rwd.breakpoint(small) {
         font-size: 15px;
     }
@@ -38,6 +45,7 @@
 }
 
 .large {
+    composes: text;
     @include rwd.breakpoint(small) {
         font-size: 18px;
     }
@@ -50,6 +58,7 @@
 }
 
 .xlarge {
+    composes: text;
     @include rwd.breakpoint(small) {
         font-size: 24px;
     }

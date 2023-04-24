@@ -1,9 +1,10 @@
-import React, { FC, useContext, useState } from "react";
+import React, { FC, useContext, useState, useEffect } from "react";
 import Link from "next/link";
 import { Logo } from "@/assets/icons";
 import { GlobalStateContext } from "@/providers/GlobalStateProvider";
 import { useActor } from "@xstate/react";
 import classNames from "classnames/bind";
+import { useRouter } from "next/router";
 import styles from "./Header.module.scss";
 import { Text } from "../Text/Text";
 import { LanguageSwitcherButton } from "../LanguageSwitcherButton/LanguageSwitcherButton";
@@ -11,6 +12,8 @@ import { LanguageSwitcherButton } from "../LanguageSwitcherButton/LanguageSwitch
 const cx = classNames.bind(styles);
 
 export const Header: FC = () => {
+  const router = useRouter();
+
   const globalServices = useContext(GlobalStateContext);
   const { languageService } = globalServices;
   const [state] = useActor(languageService);
@@ -34,6 +37,10 @@ export const Header: FC = () => {
     setIsBurgerOpen(!isBurgerOpen);
   };
 
+  useEffect(() => {
+    if (isBurgerOpen) setIsBurgerOpen(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router.asPath]);
   return (
     <div className={styles.wrapper}>
       <Link href="/" className={styles.logoWrapper}>

@@ -1,6 +1,8 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import classNames from "classnames/bind";
 import { Discord as DiscordIcon } from "@/assets/icons";
+import { GlobalStateContext } from "@/providers/GlobalStateProvider";
+import { useActor } from "@xstate/react";
 import styles from "./Discord.module.scss";
 import { PageRow } from "../PageRow/PageRow";
 import { Text } from "../Text/Text";
@@ -8,19 +10,24 @@ import { Text } from "../Text/Text";
 const cx = classNames.bind(styles);
 
 export const Discord: FC = () => {
+  const globalServices = useContext(GlobalStateContext);
+  const { languageService } = globalServices;
+  const [state] = useActor(languageService);
+
+  const { description, subTitle, title } = state.context.labels.discordPage;
+
   return (
     <>
       <PageRow>
         <div className={cx(styles.wrapper)}>
           <div className={cx(styles.introWrapper)}>
             <Text tag="h1" size="xlarge">
-              Discord Bot for Tibia community
+              {title}
             </Text>
           </div>
           <div className={cx(styles.secondIntroWrapper)}>
             <Text tag="h2" size="large">
-              I have developed Bot using discord.js <br />
-              which is based on Node.
+              {subTitle}
             </Text>
           </div>
           <div className={styles.discordIconWrapper}>
@@ -31,17 +38,10 @@ export const Discord: FC = () => {
 
       <PageRow inverted defaultPaddingTopBottom>
         <Text size="normal" tag="h3">
-          My bot has made the game much easier for Tibia players. None of the
-          guild leaders has to make lists in the notepad himself. One of the
-          leaders needs to create a list then players are able to automatically
-          sign up for bosses. Some features that I have implemented so far:
-          <br />- leaders are able to kick players from lists, <br /> - each
-          player is poked 15 minutes before the list starts, <br />- bot
-          calculates how many druids, knights, shooters are needed, <br /> - bot
-          has log channel.
+          {description}
         </Text>
       </PageRow>
-      <PageRow defaultPaddingTopBottom>TODOO</PageRow>
+      <PageRow defaultPaddingTopBottom>TBC. SCREENS + DESC</PageRow>
     </>
   );
 };

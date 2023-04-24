@@ -22,14 +22,15 @@ const mySkills = [
   "Storybook",
   "Jira",
 ];
-const myLanguages = ["Angielski B2", "Niemiecki A1"];
 
 export const AboutMeThirdPart: FC = () => {
   const globalServices = useContext(GlobalStateContext);
   const { languageService } = globalServices;
   const [state] = useActor(languageService);
 
-  const { skills, languages, exp } = state.context.labels;
+  const { skills, languages, exp, deutch, english } =
+    state.context.labels.startPage;
+  const myLanguages = [`${english} B2`, `${deutch} A1`];
 
   return (
     <div className={cx(styles.wrapper)}>

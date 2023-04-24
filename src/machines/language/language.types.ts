@@ -11,11 +11,22 @@ export interface LanguageOptions {
 
 export interface Labels {
   aboutMe: string;
-  title: string;
   discordBot: string;
-  skills: string;
-  languages: string;
-  exp: string;
+  discordPage: {
+    title: string;
+    subTitle: string;
+    description: string;
+  };
+  startPage: {
+    title: string;
+    subTitle: string;
+    description: string;
+    skills: string;
+    languages: string;
+    exp: string;
+    english: string;
+    deutch: string;
+  };
   back: string;
   errors: errors;
 }
