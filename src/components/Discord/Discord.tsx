@@ -83,13 +83,23 @@ export const Discord: FC = () => {
             <div className={styles.gyazoElementDescWrapper}>
               <Text size="normal">{pokeLooksLike}</Text>
             </div>
-            <Image src={discordPoke} alt="" width={650} height={300} />
+            <Image
+              src={discordPoke}
+              alt="Discord message 15 minutes before list starts"
+              width={650}
+              height={300}
+            />
           </div>
           <div className={styles.gyazoElement}>
             <div className={styles.gyazoElementDescWrapper}>
               <Text size="normal">{logChannel}</Text>
             </div>
-            <Image src={discordLogs} alt="" width={728} height={120} />
+            <Image
+              src={discordLogs}
+              alt="Discord channel with bot logs"
+              width={728}
+              height={120}
+            />
           </div>
         </div>
       </PageRow>
