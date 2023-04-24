@@ -17,6 +17,10 @@ export interface Labels {
     title: string;
     subTitle: string;
     description: string;
+    creatlingList: string;
+    signingUp: string;
+    pokeLooksLike: string;
+    logChannel: string;
   };
   startPage: {
     title: string;

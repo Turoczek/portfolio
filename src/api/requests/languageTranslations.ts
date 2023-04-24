@@ -31,7 +31,11 @@ const translations: translationOptions = {
       subTitle:
         "Stworzyłem Bota używając discord.js, \n który bazuje na Node.js.",
       description:
-        "Zrobiony przeze mnie bot stanowi duże usprawnienie dla Tibijskich graczy. Liderzy danej gildii nie muszą tworzyć samodzielnie list w notatniku. Wystarczy, że jeden lider stworzy listę, a potem gracze mogą automatycznie zapisywać się na bosy. Kilka funkcjonalności, które udało mi się zaimplementować: \n - liderzy mogą wyrzucić gracza z listy, \n - każdy gracz dostaje powiadomienie 15 minut przed startem listy, \n - bot wylicza dostępne miejsca dla każdej z profesji, \n - bot przechowuje logi",
+        "Zrobiony przeze mnie bot stanowi duże usprawnienie dla Tibijskich graczy. Liderzy danej gildii nie muszą tworzyć samodzielnie list w notatniku. Wystarczy, że jeden lider stworzy listę, a potem gracze mogą automatycznie zapisywać się na bosy. Kilka funkcjonalności, które udało mi się zaimplementować: \n - liderzy mogą wyrzucić gracza z listy, \n - każdy gracz dostaje powiadomienie 15 minut przed startem listy, \n - bot wylicza dostępne miejsca dla każdej z profesji, \n - bot przechowuje logi.",
+      creatlingList: "Tworzenie list",
+      signingUp: "Zapisywanie się na liste",
+      pokeLooksLike: "Jak wygląda przypomnienia",
+      logChannel: "Kanał z logami",
     },
   },
   en: {
@@ -60,6 +64,10 @@ const translations: translationOptions = {
         "I have implemented Bot using discord.js \n which is based on Node.js.",
       description:
         "My bot has made the game much easier for Tibia players. None of the guild leaders has to make lists in the notepad himself. One of the leaders needs to create a list then players are able to automatically sign up for bosses. Some features that I have implemented so far: \n  - leaders are able to kick players from lists, \n - each player is poked 15 minutes before the list starts, \n - bot calculates how many druids, knights, shooters are needed, \n - bot has log channel.",
+      creatlingList: "Creating list",
+      signingUp: "Signing up for list",
+      pokeLooksLike: "How poke looks like",
+      logChannel: "Log channel",
     },
   },
 };
