@@ -12,3 +12,4 @@ export { default as ArrowTop } from "./arrow-top.svg";
 export { default as Exp } from "./exp.svg";
 export { default as Discord } from "./discord.svg";
 export { default as ErrorNotFound } from "./errorNotFound.svg";
+export { default as Wheelbarrow } from "./wheelbarrow.svg";

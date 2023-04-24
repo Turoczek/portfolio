@@ -12,6 +12,7 @@ const translations: translationOptions = {
     back: "Wróć",
     errors: {
       wentWrong: "Coś poszło nie tak, spróbuj później.",
+      inProgress: "Ta strona jest obecnie w przebudowie.",
     },
     startPage: {
       title: "Bartosz Trzonek, Frontend Developer.",
@@ -39,6 +40,7 @@ const translations: translationOptions = {
     back: "Back",
     errors: {
       wentWrong: "Something went wrong, please try again later.",
+      inProgress: "This page is currently being updated.",
     },
     startPage: {
       title: "Bartosz Trzonek, Frontend Developer.",

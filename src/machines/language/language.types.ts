@@ -1,5 +1,6 @@
 interface errors {
   wentWrong: string;
+  inProgress: string;
 }
 
 export interface LanguageOptions {
