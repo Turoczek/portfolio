@@ -30,7 +30,7 @@ export interface Labels {
     languages: string;
     exp: string;
     english: string;
-    deutch: string;
+    german: string;
   };
   back: string;
   errors: errors;

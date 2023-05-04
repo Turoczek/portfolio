@@ -24,7 +24,7 @@ const translations: translationOptions = {
       languages: "Języki",
       skills: "Skills",
       english: "Angielski",
-      deutch: "Niemiecki",
+      german: "Niemiecki",
     },
     discordPage: {
       title: "Discord Bot dla Tibijskiej społeczności",
@@ -56,7 +56,7 @@ const translations: translationOptions = {
       languages: "Languages",
       skills: "Skills",
       english: "English",
-      deutch: "Deutch",
+      german: "German",
     },
     discordPage: {
       title: "Discord Bot for Tibia community",
