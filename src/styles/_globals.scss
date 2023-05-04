@@ -7,3 +7,19 @@ $page-width-large: 1280px;
     margin: 0;
     padding: 0;
 }
+
+@mixin button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+@mixin button() {
+    @include button-reset;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}

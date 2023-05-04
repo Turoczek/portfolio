@@ -3,6 +3,8 @@ import Router from "next/router";
 import { GlobalStateContext } from "@/providers/GlobalStateProvider";
 import { useActor } from "@xstate/react";
 import { Wheelbarrow } from "@/assets/icons";
+import { TextButton } from "@/components/Button/TextButton/TextButton";
+import { Text } from "@/components/Text/Text";
 import styles from "./InProgress.module.scss";
 
 export const InProgress: FC = () => {
@@ -13,12 +15,18 @@ export const InProgress: FC = () => {
   // TODO
   return (
     <div className={styles.container}>
-      <h1>Upsss...</h1>
+      <Text tag="h1" size="large">
+        Upsss...
+      </Text>
       <Wheelbarrow className={styles.errorIcon} />
-      <h2>{errors.inProgress}</h2>
-      <button type="button" onClick={() => Router.back()}>
-        {back}
-      </button>
+      <Text tag="h2" size="normal">
+        {errors.inProgress}
+      </Text>
+      <TextButton type="button" onClick={() => Router.back()}>
+        <Text tag="p" size="small">
+          {back}
+        </Text>
+      </TextButton>
     </div>
   );
 };

@@ -1,0 +1,26 @@
+@use '../../../styles/_globals' as global; 
+@use '../../../styles/_responsive' as rwd; 
+@use '../../../styles/_colors' as colors; 
+@use '../../../styles/_accessibility' as acc; 
+
+.button {
+    @include global.button;
+    @include acc.focus;
+
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    padding: 8px 32px 8px;
+    border-radius: 24px;
+    border: 1px solid;
+}
+
+.primary {
+    composes: button;
+    color: colors.$primary;
+    background-color: colors.$white;
+    border-color: colors.$primary;
+    &:hover {
+        color: colors.$white;
+        background-color: colors.$primary;
+    }
+}

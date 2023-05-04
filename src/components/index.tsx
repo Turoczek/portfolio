@@ -8,3 +8,4 @@ export { ScrollToTop } from "./ScrollToTop/ScrollToTop";
 export { LanguageSwitcherButton } from "./LanguageSwitcherButton/LanguageSwitcherButton";
 export { Discord } from "./Discord/Discord";
 export { ErrorNotFround } from "./Error/NotFound/NotFound";
+export { TextButton } from "./Button/TextButton/TextButton";
