@@ -51,11 +51,10 @@ export const Header: FC = () => {
           )}
         />
       </Link>
-      <nav>
+      <nav className={cx(isBurgerOpen && styles.burgerNavigationOpen)}>
         <ul
           className={cx(
-            styles.navigation,
-            isBurgerOpen && styles.navigationOpen
+            isBurgerOpen ? styles.burgerNavigationContainer : styles.navigation
           )}
         >
           {navItems.map((el, i) => {

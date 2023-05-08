@@ -48,18 +48,26 @@
     @include acc.focus;
 }
 
-.navigation {
+.burgerNavigationContainer {
     display: flex;
     justify-content: center;
     flex-direction: row;
 
     @include rwd.breakpoint(small) {
-        display: none;
+        flex-direction: column;
+        align-items: center;
     }
     @include global.list-reset;
 }
 
-.navigationOpen {
+.navigation {
+    composes: burgerNavigationContainer;
+    @include rwd.breakpoint(small) {
+        display: none;
+    }
+}
+
+.burgerNavigationOpen {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -69,7 +77,6 @@
         flex-direction: column;
         height: 100%;
         width: 100%;
-        padding-top: 120px;
         right: 0px;
         top: 0px;
         background-color: colors.$primary;
@@ -80,8 +87,11 @@
 
 .navigationItem {
     flex-grow: 1;
-    font-size: 18px;
     margin-left: 48px;
+    @include rwd.breakpoint(small) {
+        margin-left: 0;
+        margin-bottom: 48px;
+    };
 }
 
 .navigationLink {
@@ -126,14 +136,6 @@
         display: flex;
         margin-right: 48px;
     }
-}
-
-.button {
-    background: rgba(50, 50, 51, 1);
-    border-radius: 26px;
-    padding: 19px 43px 15px 32px;
-    font-size: 19px;
-    cursor: pointer;
 }
 
 .burger {

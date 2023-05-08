@@ -14,7 +14,7 @@
     display: flex;
     justify-content: space-between;
     width: 80px;
-    
+
     @include rwd.breakpoint(small) {
         flex-direction: column;
         width: 32px;
