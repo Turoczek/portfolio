@@ -26,7 +26,16 @@ export const Discord: FC = () => {
     logChannel,
     pokeLooksLike,
     signingUp,
+    seeGyazoContent,
   } = state.context.labels.discordPage;
+
+  const toSeeMoreContent = (
+    <div className={styles.gyazoWrapperNotDesktop}>
+      <Text size="small" tag="p">
+        {seeGyazoContent}
+      </Text>
+    </div>
+  );
 
   return (
     <>
@@ -54,15 +63,15 @@ export const Discord: FC = () => {
         </Text>
       </PageRow>
       <PageRow defaultPaddingTopBottom>
-        <div className={styles.gyazoWrapper}>
+        <div className={styles.gyazoWrapperDesktop}>
           <div className={styles.gyazoElement}>
             <div className={styles.gyazoElementDescWrapper}>
               <Text size="normal">{creatlingList}</Text>
             </div>
             <ReactPlayer
               playing
-              width={650}
-              height={300}
+              width="100%"
+              height="100%"
               loop
               url="https://gyazo.com/22805101b75cae60822084b1d2b582d1.mp4"
             />
@@ -73,8 +82,8 @@ export const Discord: FC = () => {
             </div>
             <ReactPlayer
               playing
-              width={650}
-              height={300}
+              width="100%"
+              height="100%"
               loop
               url="https://gyazo.com/9f070976049a982a910bfa3b04b044a6.mp4"
             />
@@ -86,19 +95,19 @@ export const Discord: FC = () => {
             <Image
               src={discordPoke}
               alt="Discord message 15 minutes before list starts"
-              width={650}
-              height={300}
+              className={styles.image}
             />
+            {toSeeMoreContent}
           </div>
           <div className={styles.gyazoElement}>
             <div className={styles.gyazoElementDescWrapper}>
               <Text size="normal">{logChannel}</Text>
             </div>
+            {toSeeMoreContent}
             <Image
               src={discordLogs}
               alt="Discord channel with bot logs"
-              width={728}
-              height={120}
+              className={styles.image}
             />
           </div>
         </div>

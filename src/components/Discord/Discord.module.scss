@@ -30,19 +30,30 @@
     height: auto;
 }
 
-.gyazoWrapper {
+.gyazoWrapperDesktop {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     margin-top: 64px;
     @include rwd.breakpoint(small) {
+        // display: none;
+    }
+}
+
+.gyazoWrapperNotDesktop {
+    margin-top: 16px;
+    @include rwd.breakpoint(normal) {
+        display: none;
+    }
+    @include rwd.breakpoint(large) {
         display: none;
     }
 }
 
 .gyazoElement {
     margin-bottom: 64px;
+    
     @include rwd.breakpoint(small) {
         margin-bottom: 32px;
     }
@@ -50,4 +61,14 @@
 
 .gyazoElementDescWrapper {
     margin-bottom: 8px;
+}
+
+.image {
+    @include rwd.breakpoint(small) {
+        display: none;
+    }
+    
+    @include rwd.breakpoint(medium) {
+        display: none;
+    }
 }

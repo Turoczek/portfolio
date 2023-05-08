@@ -21,6 +21,7 @@ export interface Labels {
     signingUp: string;
     pokeLooksLike: string;
     logChannel: string;
+    seeGyazoContent: string;
   };
   startPage: {
     title: string;

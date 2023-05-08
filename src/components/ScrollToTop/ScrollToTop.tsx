@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 export const ScrollToTop: FC<ScrollToTopProps> = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const minHeight = 1 * useWindowHeight();
+  const minHeight = 0.8 * useWindowHeight();
 
   const toggleVisibility = () => {
     if (window.scrollY > minHeight) {

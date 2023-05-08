@@ -36,6 +36,8 @@ const translations: translationOptions = {
       signingUp: "Zapisywanie się na liste",
       pokeLooksLike: "Jak wygląda przypomnienia",
       logChannel: "Kanał z logami",
+      seeGyazoContent:
+        "Aby zobaczyć jak działa wyżej wymieniona funkcjonalność proszę skorzystać z urządzenia o większym ekranie, ewentualnie zapraszam do prywatnego kontaktu, z chęcia opowiem więcej i zademonstruje działanie.",
     },
   },
   en: {
@@ -68,6 +70,8 @@ const translations: translationOptions = {
       signingUp: "Signing up for list",
       pokeLooksLike: "How poke looks like",
       logChannel: "Log channel",
+      seeGyazoContent:
+        "To see how the above-mentioned functionality works, please use a device with a larger screen, or feel free to contact me privately, I will be happy to tell you more and demonstrate how it works.",
     },
   },
 };
