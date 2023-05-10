@@ -42,9 +42,9 @@ export const StepOne: FC = () => {
     const id = e.target.value;
     if (checked[id as unknown as number]) {
       const dependentService = Object.entries(dependencies).find(
-        ([key, serviceDependence]) => {
+        ([key, serviceDependencies]) => {
           if (checked[key as unknown as number]) {
-            return serviceDependence.some(
+            return serviceDependencies.some(
               (dependency) => checked[dependency] === true
             );
           }
