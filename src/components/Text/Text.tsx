@@ -9,7 +9,10 @@ export const Text: FC<TextProps> = ({
   children,
   size = "normal",
   tag = "p",
+  customClass,
 }) => {
   const Tag = tag as keyof JSX.IntrinsicElements;
-  return <Tag className={cx(styles[size], styles[tag])}>{children}</Tag>;
+  return (
+    <Tag className={cx(styles[size], styles[tag], customClass)}>{children}</Tag>
+  );
 };

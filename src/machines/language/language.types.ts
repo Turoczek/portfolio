@@ -13,6 +13,7 @@ export interface LanguageOptions {
 export interface Labels {
   aboutMe: string;
   discordBot: string;
+  calculator: string;
   discordPage: {
     title: string;
     subTitle: string;
@@ -32,6 +33,14 @@ export interface Labels {
     exp: string;
     english: string;
     german: string;
+  };
+  calculatorPage: {
+    internet: string;
+    tv: string;
+    decoder: string;
+    phoneSub: string;
+    router: string;
+    open: string;
   };
   back: string;
   errors: errors;

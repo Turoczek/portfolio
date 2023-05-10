@@ -20,7 +20,7 @@ export const Header: FC = () => {
 
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
-  const { aboutMe, discordBot } = state.context.labels;
+  const { aboutMe, discordBot, calculator } = state.context.labels;
 
   const navItems = [
     {
@@ -30,6 +30,10 @@ export const Header: FC = () => {
     {
       label: aboutMe,
       url: "/aboutme",
+    },
+    {
+      label: calculator,
+      url: "/calculator",
     },
   ];
 

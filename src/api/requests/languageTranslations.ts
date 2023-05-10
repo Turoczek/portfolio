@@ -9,6 +9,7 @@ const translations: translationOptions = {
   pl: {
     aboutMe: "O mnie",
     discordBot: "Discord bot",
+    calculator: "Kalkulator",
     back: "Wróć",
     errors: {
       wentWrong: "Coś poszło nie tak, spróbuj później.",
@@ -39,10 +40,19 @@ const translations: translationOptions = {
       seeGyazoContent:
         "Aby zobaczyć jak działa wyżej wymieniona funkcjonalność proszę skorzystać z urządzenia o większym ekranie, ewentualnie zapraszam do prywatnego kontaktu, z chęcia opowiem więcej i zademonstruje działanie.",
     },
+    calculatorPage: {
+      decoder: "Dekoder",
+      internet: "Internet",
+      phoneSub: "Abonament telefoniczny",
+      router: "Router",
+      tv: "Telewizja",
+      open: "Otwórz",
+    },
   },
   en: {
     aboutMe: "About me",
     discordBot: "Discord bot",
+    calculator: "Calculator",
     back: "Back",
     errors: {
       wentWrong: "Something went wrong, please try again later.",
@@ -72,6 +82,14 @@ const translations: translationOptions = {
       logChannel: "Log channel",
       seeGyazoContent:
         "To see how the above-mentioned functionality works, please use a device with a larger screen, or feel free to contact me privately, I will be happy to tell you more and demonstrate how it works.",
+    },
+    calculatorPage: {
+      decoder: "Decoder",
+      internet: "Internet",
+      phoneSub: "Phone subscription",
+      router: "Router",
+      tv: "Television",
+      open: "Open",
     },
   },
 };
