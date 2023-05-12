@@ -41,6 +41,8 @@ export interface Labels {
     phoneSub: string;
     router: string;
     open: string;
+    selectYears: string;
+    close: string;
   };
   back: string;
   errors: errors;

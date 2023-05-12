@@ -1,25 +1,26 @@
 import { Services, getData } from "@/api/requests/calculator";
 import { assign, createMachine } from "xstate";
 
-type FetchOptions = {
-  lang: "en" | "pl";
-};
-
 export interface calculatorContext {
   data: Services;
+  selected: Array<string>;
 }
 
 export type calculatorMachineEvent =
   | { type: "OPEN" }
-  | { type: "NEXT"; options: FetchOptions }
-  | { type: "CLOSE"; options: FetchOptions }
-  | { type: "SELECT"; options: FetchOptions }
+  | { type: "NEXT"; selected: Array<string> }
+  | { type: "CLOSE" }
   | { type: "xstate.init"; data: Services }
-  | { type: "PREV" }
+  | { type: "PREV"; selected: Array<string> }
+  | {
+      type: "done.invoke.requesting";
+      data: Services;
+    }
   | {
       type: "done.invoke.calculator.fetchInitialData:invocation[0]";
       data: Services;
-    };
+    }
+  | { type: "CALCULATE"; data: { selected: Array<string>; year: string } };
 
 export type calculatorStates =
   | { value: "inactive"; context: calculatorContext }
@@ -68,6 +69,9 @@ export const calculatorMachine = createMachine<
                 actions: ["applyData"],
                 target: "step2",
               },
+              CLOSE: {
+                target: "#inactive",
+              },
             },
           },
           step2: {
@@ -75,47 +79,32 @@ export const calculatorMachine = createMachine<
               PREV: {
                 target: "step1",
               },
+              CALCULATE: {
+                target: "requesting",
+              },
             },
           },
-        },
-        on: {
-          SELECT: {
-            target: "requesting",
-            actions: ["applyData"],
-          },
-          CLOSE: {
-            target: "inactive",
-          },
-        },
-      },
-      requesting: {
-        invoke: {
-          id: "requesting",
-          src: "getData",
-          onDone: [
-            {
-              target: "inactive",
-              actions: ["applyData"],
+          requesting: {
+            invoke: {
+              id: "requesting",
+              src: "getData",
+              onDone: [
+                {
+                  target: "#calculator.inactive",
+                  actions: ["applyData"],
+                },
+              ],
+              onError: [
+                {
+                  target: "error",
+                },
+              ],
             },
-          ],
-          onError: [
-            {
-              target: "error",
-            },
-          ],
+          },
+          error: {},
         },
       },
-      error: {
-        on: {
-          SELECT: {
-            target: "requesting",
-            actions: ["applyData"],
-          },
-          CLOSE: {
-            target: "inactive",
-          },
-        },
-      },
+      error: {},
     },
   },
   {
@@ -128,14 +117,26 @@ export const calculatorMachine = createMachine<
           ) {
             return event.data;
           }
+          if (event.type === "done.invoke.requesting") {
+            return event.data;
+          }
           return context.data;
+        },
+        selected: (context, event) => {
+          if (event.type === "NEXT") {
+            return event.selected;
+          }
+          return context.selected;
         },
       }),
     },
     services: {
       getData: async (context, event) => {
-        if (event.type === "SELECT") {
-          return getData();
+        if (event.type === "CALCULATE") {
+          return getData({
+            selected: event.data.selected,
+            year: event.data.year,
+          });
         }
         if (event.type === "xstate.init") {
           return getData();

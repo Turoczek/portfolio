@@ -44,9 +44,11 @@ const translations: translationOptions = {
       decoder: "Dekoder",
       internet: "Internet",
       phoneSub: "Abonament telefoniczny",
-      router: "Router",
+      router: "Ruter",
       tv: "Telewizja",
       open: "Otwórz",
+      selectYears: "Select years",
+      close: "Close",
     },
   },
   en: {
@@ -90,6 +92,8 @@ const translations: translationOptions = {
       router: "Router",
       tv: "Television",
       open: "Open",
+      selectYears: "Wybierz lata",
+      close: "Zamknij",
     },
   },
 };

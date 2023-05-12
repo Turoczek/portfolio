@@ -1,8 +1,8 @@
 import React, { FC, useContext } from "react";
-// import { CalculatorProps } from "./Calculator.types";
 import { GlobalStateContext } from "@/providers/GlobalStateProvider";
 import { useActor } from "@xstate/react";
 import { StepOne } from "@/components/CalculatorSteps/StepOne/StepOne";
+import { StepTwo } from "@/components/CalculatorSteps/StepTwo/StepTwo";
 import styles from "./Calculator.module.scss";
 import { TextButton } from "../../components/Button/TextButton/TextButton";
 import { PageRow } from "../../components/PageRow/PageRow";
@@ -29,9 +29,15 @@ export const Calculator: FC = () => {
               {calculatorPage.open}
             </TextButton>
           )}
-          {state.matches("active") && <StepOne />}
+          {state.matches("inactive") &&
+            state.event.type === "done.invoke.requesting" && (
+              <p>{state.context.data.prices?.summary}</p>
+            )}
+          {state.matches("active.step1") && <StepOne />}
+          {state.matches("active.step2") && <StepTwo />}
         </div>
       </div>
+      TBC.
     </PageRow>
   );
 };

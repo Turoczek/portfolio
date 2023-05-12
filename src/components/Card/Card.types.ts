@@ -1,6 +1,9 @@
+import { ChangeEvent, ReactNode } from "react";
+
 export type CardProps = {
-  title: string;
-  //   description: string;
-  price?: string;
-  onValueChange?: (value: string) => void;
+  value: string | number;
+  onValueChange: (value: ChangeEvent<HTMLInputElement>) => void;
+  children: ReactNode;
+  isDisabled?: boolean;
+  isChecked?: boolean;
 };
