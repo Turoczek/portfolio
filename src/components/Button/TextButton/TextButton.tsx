@@ -27,6 +27,7 @@ export const TextButton: FC<TextButtonProps> = ({
     <button
       className={cx(styles[variant], styles[size])}
       aria-disabled={disabled}
+      disabled={disabled}
       // eslint-disable-next-line react/button-has-type
       type={type}
       {...props}

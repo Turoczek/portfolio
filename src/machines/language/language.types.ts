@@ -14,6 +14,7 @@ export interface Labels {
   aboutMe: string;
   discordBot: string;
   calculator: string;
+  dish: string;
   discordPage: {
     title: string;
     subTitle: string;
@@ -43,6 +44,21 @@ export interface Labels {
     open: string;
     selectYears: string;
     close: string;
+  };
+  dishPage: {
+    title: string;
+    dishName: string;
+    preparationTime: string;
+    pizza: string;
+    soup: string;
+    sandwich: string;
+    numberOfSlices: string;
+    diameter: string;
+    spicinesScale: string;
+    slicesOfBread: string;
+    send: string;
+    success: string;
+    fakeApiError: string;
   };
   back: string;
   errors: errors;
