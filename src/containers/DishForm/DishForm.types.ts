@@ -24,3 +24,7 @@ export interface DishQuery {
 export interface FakeErrorType {
   [id: string]: string;
 }
+
+export interface DishesTypeYup {
+  [id: string]: string;
+}

@@ -110,6 +110,7 @@ export const DishForm: FC = () => {
       case "pizza":
         return YupObject().shape({
           name: YupString().required(),
+          type: YupString().required(),
           preparationTime: YupString().required(),
           numberOfSlices: YupNumber().positive().required(),
           diameter: YupNumber().positive().required(),
@@ -117,12 +118,14 @@ export const DishForm: FC = () => {
       case "sandwich":
         return YupObject().shape({
           name: YupString().required(),
+          type: YupString().required(),
           preparationTime: YupString().required(),
           slicesOfBread: YupNumber().positive().required(),
         });
       case "soup":
         return YupObject().shape({
           name: YupString().required(),
+          type: YupString().required(),
           preparationTime: YupString().required(),
           spicinessScale: YupNumber().min(1).max(10).required(),
         });
