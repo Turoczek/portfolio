@@ -89,6 +89,7 @@ export const DishForm: FC = () => {
         getObjectToSend(values, selectedType)
       )
       .then((res) => {
+        // COULD BE MAPPER HERE
         setResponse(res.data);
       })
       .catch(() => {

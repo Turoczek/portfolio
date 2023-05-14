@@ -18,6 +18,7 @@ export interface DishQuery {
   diameter?: number;
   spiciness_scale?: number;
   slices_of_bread?: number;
+  id?: string;
 }
 
 export interface FakeErrorType {
