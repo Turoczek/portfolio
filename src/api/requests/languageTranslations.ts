@@ -52,7 +52,7 @@ const translations: translationOptions = {
       close: "Zamknij",
     },
     dishPage: {
-      title: "Formlarz dań",
+      title: "Formularz dań",
       diameter: "Średnica",
       dishName: "Nazwa dania",
       numberOfSlices: "Liczba kawałków",
@@ -131,6 +131,7 @@ const translations: translationOptions = {
 };
 
 export const getTranslation = async (lang: "pl" | "en"): Promise<Labels> => {
+  // FAKE API PROMISE
   return new Promise((resolve) => {
     resolve(translations[lang]);
   });
