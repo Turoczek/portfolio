@@ -28,10 +28,16 @@ export type Promotions = {
     };
   };
 };
+
 export type ServicesPrices = {
   [id: string]: {
     [id: string]: number;
   };
+};
+
+type PriceVariant = {
+  price: number;
+  notCalculatedServices: Array<number>;
 };
 
 enum PROMOTIONS_ID {
@@ -121,24 +127,66 @@ const promotions: Promotions = {
   },
 };
 
-// const summaryRestServices = (values: Array<string>, year: string) => {
-//   if (values.length > 0) {
-//     return values.reduce((acc, curr) => {
-//       return acc + servicesPrices[year][curr];
-//     }, 0);
-//   }
-//   return 0;
-// };
+const getPricesVariants = (
+  year: string,
+  idsSelected: Array<number>
+): PriceVariant[] => {
+  const availablePromotions = Object.entries(promotions[year]).filter((e) =>
+    e[1].rules.every(
+      (rule) => idsSelected.includes(rule) && !e[1].justLowerItemPrice
+    )
+  );
+  const result = [];
+
+  for (let i = 0; i < availablePromotions.length; i += 1) {
+    let price = 0;
+    let used: Array<number> = [];
+    if (
+      availablePromotions[i][1].rules.every(
+        (ruleId) => idsSelected.includes(ruleId) && !used.includes(ruleId)
+      )
+    ) {
+      price += availablePromotions[i][1].price;
+      used = [...used, ...availablePromotions[i][1].rules];
+    }
+    result.push({
+      price,
+      notCalculatedServices: idsSelected.filter((id) => !used.includes(id)),
+    });
+  }
+  return result;
+};
+
+const getBestPrice = (pricesVariants: PriceVariant[], year: string) => {
+  // if(pricesVariants.every((variant) => (variant.notCalculatedServices.length === 0))) {
+  //   return pricesVariants
+  // }
+  if (pricesVariants.length === 1) {
+    return pricesVariants[0].price;
+  }
+  return Math.min(
+    ...pricesVariants.map((variant) => {
+      return (
+        variant.price + servicesPrices[year][variant.notCalculatedServices[0]]
+      );
+    })
+  );
+};
 
 const getPrice = (options: CalcualtorQuery): Price => {
   const { selected, year } = options;
-  const idsSelected = [...selected];
+  const idsSelected = [...selected].map((el) => parseInt(el, 10));
 
-  // TBC
+  const pricesVariants = getPricesVariants(year, idsSelected);
 
   return {
     currency: "PLN",
-    summary: "0",
+    summary:
+      pricesVariants.length === 0
+        ? idsSelected
+            .reduce((acc, curr) => acc + servicesPrices[year][curr], 0)
+            .toString()
+        : getBestPrice(pricesVariants, year).toString(),
   };
 };
 
