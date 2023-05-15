@@ -79,7 +79,6 @@ const servicesPrices: ServicesPrices = {
 };
 
 const promotions: Promotions = {
-  // 100 int+tv, 200 int+phoneSub, 300 decoder if 100
   2023: {
     [PROMOTIONS_ID.PRIMARY]: {
       rules: [SERVICES.INTERNET, SERVICES.TV],
@@ -158,9 +157,6 @@ const getPricesVariants = (
 };
 
 const getBestPrice = (pricesVariants: PriceVariant[], year: string) => {
-  // if(pricesVariants.every((variant) => (variant.notCalculatedServices.length === 0))) {
-  //   return pricesVariants
-  // }
   if (pricesVariants.length === 1) {
     return pricesVariants[0].price;
   }
