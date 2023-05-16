@@ -16,7 +16,7 @@ export const StepOne: FC = () => {
   const [state, send] = useActor(calculatorService);
   const [stateLanguage] = useActor(languageService);
   const { data, selected } = state.context;
-  const { decoder, internet, phoneSub, router, tv, selectYears, close } =
+  const { decoder, internet, phoneSub, router, tv, selectYear, close } =
     stateLanguage.context.labels.calculatorPage;
 
   const getAlreadyChecked = () => {
@@ -127,11 +127,9 @@ export const StepOne: FC = () => {
           })}
         </ul>
       </div>
-      <div className={styles.nextButtonContainer}>
-        <TextButton onClick={handleNext}>{selectYears}</TextButton>
-      </div>
-      <div className={styles.nextButtonContainer}>
+      <div className={styles.summaryButtonsContainer}>
         <TextButton onClick={handleBack}>{close}</TextButton>
+        <TextButton onClick={handleNext}>{selectYear}</TextButton>
       </div>
     </div>
   );

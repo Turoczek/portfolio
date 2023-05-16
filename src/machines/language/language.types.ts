@@ -42,8 +42,9 @@ export interface Labels {
     phoneSub: string;
     router: string;
     open: string;
-    selectYears: string;
+    selectYear: string;
     close: string;
+    summaryText: string;
   };
   dishPage: {
     title: string;

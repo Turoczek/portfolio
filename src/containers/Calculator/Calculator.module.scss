@@ -1,10 +1,16 @@
 .container{
-    height: 70vh;
+    margin-top: 128px;
 }
 
 .containerInner {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
+}
+
+.containerSummary {
+    text-align: center;
+    margin-top: 16px;
 }

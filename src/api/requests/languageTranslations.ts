@@ -48,8 +48,9 @@ const translations: translationOptions = {
       router: "Ruter",
       tv: "Telewizja",
       open: "Otwórz",
-      selectYears: "Wybierz lata",
+      selectYear: "Wybierz rok",
       close: "Zamknij",
+      summaryText: "Najlepsza cena za wybrane serwisy",
     },
     dishPage: {
       title: "Formularz dań",
@@ -109,8 +110,9 @@ const translations: translationOptions = {
       router: "Router",
       tv: "Television",
       open: "Open",
-      selectYears: "Select years",
+      selectYear: "Select year",
       close: "Close",
+      summaryText: "Best price for selected services",
     },
     dishPage: {
       title: "Dish form",
