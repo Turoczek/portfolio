@@ -21,13 +21,9 @@ const Licz = (arr: Array<number>) => {
 };
 
 export const Moja = (arr: Array<number>) => {
-  const arrGrouped: Array<[number, number]> = [];
-  for (let i = 0; i < arr.length; i += 2) {
-    arrGrouped.push([arr[i], arr[i + 1]]);
-  }
-  const { used } = Licz(arr);
+  const { used, grouped } = Licz(arr);
 
-  const resultPairs = arrGrouped.filter(
+  const resultPairs = grouped.filter(
     (item) =>
       !used.some(
         (usedItem) => usedItem[0] === item[0] && usedItem[1] === item[1]
@@ -39,5 +35,5 @@ export const Moja = (arr: Array<number>) => {
     result.push(el[0]);
     result.push(el[1]);
   });
-  console.log(result.join());
+  return result.join();
 };

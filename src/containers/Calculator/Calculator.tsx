@@ -7,6 +7,7 @@ import { Text } from "@/components";
 import styles from "./Calculator.module.scss";
 import { TextButton } from "../../components/Button/TextButton/TextButton";
 import { PageRow } from "../../components/PageRow/PageRow";
+import { Moja } from "./Funkcja";
 
 export const Calculator: FC = () => {
   const globalServices = useContext(GlobalStateContext);
@@ -22,6 +23,11 @@ export const Calculator: FC = () => {
       type: "OPEN",
     });
   };
+
+  console.log(Moja([5, 4, 6, 7, 7, 6, 4, 5]));
+  console.log(Moja([2, 1, 1, 2, 3, 3]));
+  console.log(Moja([6, 2, 2, 6, 5, 14, 14, 1]));
+  console.log(Moja([1, 2, 3, 4, 5, 6]));
   return (
     <PageRow>
       <div className={styles.container}>
