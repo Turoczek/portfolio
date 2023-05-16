@@ -22,7 +22,6 @@ export const Calculator: FC = () => {
       type: "OPEN",
     });
   };
-
   return (
     <PageRow>
       <div className={styles.container}>
