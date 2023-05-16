@@ -20,7 +20,7 @@ const Licz = (arr: Array<number>) => {
   };
 };
 
-export const Moja = (arr: Array<number>) => {
+export const ArrayChallenge = (arr: Array<number>) => {
   const { used, grouped } = Licz(arr);
 
   const resultPairs = grouped.filter(
