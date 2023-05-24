@@ -18,9 +18,12 @@ const mySkills = [
   "GraphQL",
   "Contentful",
   "Node.js",
+  "Next.js",
   "HTML5, CSS3, SCSS",
   "Storybook",
+  "MUI",
   "Jira",
+  "Scrum",
 ];
 
 export const AboutMeThirdPart: FC = () => {
