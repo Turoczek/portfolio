@@ -18,7 +18,7 @@ const mySkills = [
   "GraphQL",
   "Contentful",
   "Node.js",
-  "Next.js",
+  "Nest.js",
   "HTML5, CSS3, SCSS",
   "Storybook",
   "MUI",
