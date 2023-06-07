@@ -1,0 +1,97 @@
+$break-point: 1080px;
+
+.itemLegendContainter {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 48px;
+    max-width: 60vw;
+    margin: 0 0 0 196px;
+    padding: 0;
+    @media (max-width: $break-point) {
+    gap: 24px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    }
+}
+
+.rowContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 16px;
+}
+
+.singleRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+}
+
+.singleItemContainer {
+    flex: 1;
+    box-shadow: 0px 14px 16px -15px rgba(4, 4, 8, 1);
+}
+
+.emptyItemContainer {
+    flex: 1;
+}
+
+.subTitlesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.singleRowGrid {
+    display: grid;  
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 16px;
+    list-style: none;
+    margin: 16px 0 0 0;
+    padding: 0;
+}
+
+.singleRow-12 {
+    composes: singleRowGrid;
+    @media (max-width: $break-point) {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+}
+
+.singleRow-11 {
+    composes: singleRowGrid;
+    @media (max-width: $break-point) {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+}
+
+.singleRow-10 {
+    composes: singleRowGrid;
+    @media (max-width: $break-point) {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+}
+
+.singleRow-9 {
+    composes: singleRowGrid;
+    @media (max-width: $break-point) {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.singleRow-8 {
+    composes: singleRowGrid;
+    @media (max-width: $break-point) {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.break {
+    text-align: center;
+    padding: 128px 0;
+}

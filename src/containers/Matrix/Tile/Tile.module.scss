@@ -1,0 +1,8 @@
+.normal {
+    height: 100%;
+}
+
+.checked {
+    composes: normal;
+    opacity: 0.5;
+}
