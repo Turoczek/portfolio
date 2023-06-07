@@ -1,0 +1,32 @@
+$break-point: 1080px;
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+    width: 160px;
+    height: max-content;
+    padding: 48px 0;
+    margin: auto;
+    background-color: #f8ff91;
+    box-shadow: 0px 14px 16px -15px rgba(4, 4, 8, 1);
+    border-radius: 4px;
+    font-size: 20px;
+    @media (max-width: $break-point) {
+        font-size: 16px;
+    }
+}
+
+.emptyContainer {
+    min-width: 160px;
+    width: 160px;
+}
+
+.left {
+    margin-right: 8px;
+}
+
+.right {
+    margin-left: 8px;
+}
