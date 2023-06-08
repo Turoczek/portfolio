@@ -125,9 +125,10 @@ export const Matrix: FC<MatrixData> = ({
   const [popupText, setPopupText] = useState<string>("a");
   const [rerender, setRerender] = useState<boolean>(false);
   const [isPopupOpen, setPopupOpen] = useState<boolean>(false);
-  const [filters, setFilters] = useState<ItemType[]>(
-    itemLegend.map((el) => el.type)
-  );
+  const [filters, setFilters] = useState<ItemType[]>([
+    ...itemLegend.map((el) => el.type),
+    "empty",
+  ]);
 
   const handleFilter = (type: ItemType) => {
     if (filters.includes(type)) {
