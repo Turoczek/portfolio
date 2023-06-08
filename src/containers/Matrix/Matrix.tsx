@@ -36,10 +36,8 @@ const renderFlexTiers = (
                       >
                         <Tile
                           item={item}
-                          handleClick={() =>
-                            onClick(`${k}-${i}-${j}`, item.popupText)
-                          }
-                          checked={!!sessionStorage.getItem(`${k}-${i}-${j}`)}
+                          handleClick={() => onClick(item.id, item.popupText)}
+                          checked={!!sessionStorage.getItem(item.id)}
                         />
                       </li>
                     )
@@ -95,10 +93,8 @@ const renderGridTiers = (
                       >
                         <Tile
                           item={item}
-                          handleClick={() =>
-                            onClick(`2-${a}-${b}-${c}`, item.popupText)
-                          }
-                          checked={!!sessionStorage.getItem(`2-${a}-${b}-${c}`)}
+                          handleClick={() => onClick(item.id, item.popupText)}
+                          checked={!!sessionStorage.getItem(item.id)}
                         />
                       </li>
                     )

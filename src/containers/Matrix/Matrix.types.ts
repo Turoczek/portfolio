@@ -8,6 +8,7 @@ export type ItemType =
   | "empty";
 
 export type Item = {
+  id: string;
   type: ItemType;
   description: string;
   popupText?: string;
@@ -25,10 +26,7 @@ export type Tier = {
 
 export type MatrixData = {
   data: {
-    itemLegend: {
-      description: string;
-      type: ItemType;
-    }[];
+    itemLegend: { id: string; description: string; type: ItemType }[];
     title: string;
     tiers: Tier[];
   };
