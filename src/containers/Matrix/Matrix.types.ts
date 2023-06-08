@@ -10,6 +10,7 @@ export type ItemType =
 export type Item = {
   type: ItemType;
   description: string;
+  popupText?: string;
 };
 
 export type Row = {

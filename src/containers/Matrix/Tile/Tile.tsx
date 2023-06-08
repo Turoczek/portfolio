@@ -8,40 +8,40 @@ import { ItemType } from "../Matrix.types";
 const getColor = (type: ItemType) => {
   switch (type) {
     case "normal":
-      return "inherit";
+      return "#ff0000";
     case "primary":
-      return "primary";
+      return "#b25c20";
     case "secondary":
-      return "secondary";
+      return "#808080";
     case "default":
-      return "info";
+      return "#0000cc";
     case "quaternary":
-      return "success";
+      return "#00cc00";
     case "tertiary":
-      return "warning";
+      return "#ffcc00";
     case "empty":
     default:
-      return undefined;
+      return "#000000";
   }
 };
-
 export const Tile: FC<TileProps> = ({
   item: { description, type },
   handleClick,
   checked,
 }) => {
+  const buttonStyle = {
+    backgroundColor: getColor(type),
+    fontSize: 8,
+    color: "black",
+  };
   return (
     <Button
-      color={getColor(type)}
       variant="contained"
       className={checked ? styles.checked : styles.normal}
       size="small"
       fullWidth
       onClick={handleClick}
-      sx={{
-        fontSize: 8,
-        color: "black",
-      }}
+      style={buttonStyle}
     >
       {description}
     </Button>

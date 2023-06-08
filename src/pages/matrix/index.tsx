@@ -23,6 +23,7 @@ const mockData: MatrixData = {
                 description:
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et molestie massa. Fusce efficitur ex.",
                 type: "default",
+                popupText: "Dowolny text",
               },
               { description: "Drugi", type: "normal" },
               { description: "Trzeci", type: "primary" },
