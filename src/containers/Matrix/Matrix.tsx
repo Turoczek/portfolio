@@ -1,6 +1,4 @@
 import React, { FC, useState } from "react";
-import { PageRow } from "@/components";
-
 import { Button } from "@mui/material";
 import styles from "./Matrix.module.scss";
 import { ItemType, MatrixData, Tier } from "./Matrix.types";
@@ -108,7 +106,7 @@ export const Matrix: FC<MatrixData> = ({
   };
 
   return (
-    <PageRow>
+    <div className={styles.wrapper}>
       {renderItemLegends()}
       <h1>{title}</h1>
       {renderGridTiers(tiers, handleItemClick, filters)}
@@ -130,10 +128,10 @@ export const Matrix: FC<MatrixData> = ({
             Zamknij
           </Button>
           <Button sx={{ flex: 1, marginLeft: 4 }} variant="contained">
-            Wykonaj akcje
+            Lorem, ipsum.
           </Button>
         </ModalActions>
       </Modal>
-    </PageRow>
+    </div>
   );
 };
