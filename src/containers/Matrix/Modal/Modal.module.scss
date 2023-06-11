@@ -1,0 +1,18 @@
+.contentWrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+}
+
+.actionsWrapper {
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    left: 50%; 
+    transform: translate(-50%, 0);
+}
+
+.actionsInnerWrapper {
+    display: flex;
+    padding: 0 16px;
+}

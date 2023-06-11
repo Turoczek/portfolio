@@ -1,11 +1,13 @@
 import React, { FC, useState } from "react";
 import { PageRow } from "@/components";
 
-import { Dialog, DialogTitle } from "@mui/material";
+import { Button } from "@mui/material";
 import styles from "./Matrix.module.scss";
 import { ItemType, MatrixData, Tier } from "./Matrix.types";
 import { Tile } from "./Tile/Tile";
 import { TileTitle } from "./TileTitle/TileTitle";
+import { Modal } from "./Modal/Modal";
+import { ModalActions } from "./Modal/ModalActions/ModalActions";
 
 const renderFlexTiers = (
   tiers: Tier[],
@@ -46,17 +48,6 @@ const renderFlexTiers = (
             );
           })}
         </div>
-        {tier.subTitles ? (
-          <div className={styles.subTitlesContainer}>
-            {tier.subTitles.map((sub, i) => (
-              <TileTitle key={i} variant="right">
-                {sub}
-              </TileTitle>
-            ))}
-          </div>
-        ) : (
-          <TileTitle variant="right" />
-        )}
       </div>
       <hr />
     </React.Fragment>
@@ -103,17 +94,6 @@ const renderGridTiers = (
             );
           })}
         </div>
-        {tier.subTitles ? (
-          <div className={styles.subTitlesContainer}>
-            {tier.subTitles.map((sub, i) => (
-              <TileTitle key={i} variant="right">
-                {sub}
-              </TileTitle>
-            ))}
-          </div>
-        ) : (
-          <TileTitle variant="right" />
-        )}
       </div>
       <hr />
     </React.Fragment>
@@ -122,9 +102,9 @@ const renderGridTiers = (
 export const Matrix: FC<MatrixData> = ({
   data: { itemLegend, title, tiers },
 }) => {
-  const [popupText, setPopupText] = useState<string>("a");
+  const [modalTitle, setModalTitle] = useState<string>("x");
   const [rerender, setRerender] = useState<boolean>(false);
-  const [isPopupOpen, setPopupOpen] = useState<boolean>(false);
+  const [isModalOpen, setModalOpen] = useState<boolean>(false);
   const [filters, setFilters] = useState<ItemType[]>([
     ...itemLegend.map((el) => el.type),
     "empty",
@@ -147,8 +127,8 @@ export const Matrix: FC<MatrixData> = ({
     } else {
       sessionStorage.setItem(key, "clicked");
       if (message) {
-        setPopupText(message);
-        setPopupOpen(!isPopupOpen);
+        setModalTitle(message);
+        setModalOpen(!isModalOpen);
       } else {
         setRerender(!rerender);
       }
@@ -175,13 +155,31 @@ export const Matrix: FC<MatrixData> = ({
     <PageRow>
       {renderItemLegends()}
       <h1>{title}</h1>
-      {renderFlexTiers(tiers, handleItemClick, filters)}
-      <div className={styles.break}>GÓRA FLEX, DÓŁ GRID</div>
+      {/* {renderFlexTiers(tiers, handleItemClick, filters)} */}
+      {/* <div className={styles.break}>GÓRA FLEX, DÓŁ GRID</div> */}
       {renderGridTiers(tiers, handleItemClick, filters)}
-
-      <Dialog open={isPopupOpen} onClose={() => setPopupOpen(false)}>
-        <DialogTitle>{popupText}</DialogTitle>
-      </Dialog>
+      <Modal
+        title={modalTitle}
+        isOpen={isModalOpen}
+        onChange={() => setModalOpen(!isModalOpen)}
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum voluptas
+          vero, est eos cupiditate reiciendis.
+        </p>
+        <ModalActions>
+          <Button
+            onClick={() => setModalOpen(false)}
+            sx={{ flex: 1 }}
+            variant="contained"
+          >
+            Zamknij
+          </Button>
+          <Button sx={{ flex: 1, marginLeft: 4 }} variant="contained">
+            Wykonaj akcje
+          </Button>
+        </ModalActions>
+      </Modal>
     </PageRow>
   );
 };

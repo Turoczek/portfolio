@@ -21,7 +21,6 @@ export type Row = {
 export type Tier = {
   title: string;
   rows: Row[];
-  subTitles?: Array<string>;
 };
 
 export type MatrixData = {

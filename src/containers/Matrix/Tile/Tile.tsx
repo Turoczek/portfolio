@@ -8,17 +8,17 @@ import { ItemType } from "../Matrix.types";
 const getColor = (type: ItemType) => {
   switch (type) {
     case "normal":
-      return "#ff0000";
+      return "#ffcfe0";
     case "primary":
-      return "#b25c20";
+      return "#f5d22b";
     case "secondary":
-      return "#808080";
+      return "#e793ba";
     case "default":
-      return "#0000cc";
+      return "#fd9d49";
     case "quaternary":
-      return "#00cc00";
+      return "#69c7c1";
     case "tertiary":
-      return "#ffcc00";
+      return "#fff9b2";
     case "empty":
     default:
       return "#000000";

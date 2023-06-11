@@ -48,7 +48,6 @@ const mockData: MatrixData = {
       },
       {
         title: "Senior",
-        subTitles: ["Sponsor"],
         rows: [
           {
             items: [
@@ -132,7 +131,6 @@ const mockData: MatrixData = {
       },
       {
         title: "Mid",
-        subTitles: ["Business representative"],
         rows: [
           {
             items: [
@@ -216,7 +214,6 @@ const mockData: MatrixData = {
       },
       {
         title: "Junior",
-        subTitles: ["Proxy", "Scribe"],
         rows: [
           {
             items: [
