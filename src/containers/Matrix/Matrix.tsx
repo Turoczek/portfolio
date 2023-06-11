@@ -9,50 +9,6 @@ import { TileTitle } from "./TileTitle/TileTitle";
 import { Modal } from "./Modal/Modal";
 import { ModalActions } from "./Modal/ModalActions/ModalActions";
 
-const renderFlexTiers = (
-  tiers: Tier[],
-  onClick: (key: string, message?: string) => void,
-  filters: ItemType[]
-) =>
-  tiers.map((tier, k) => (
-    <React.Fragment key={k}>
-      <div className={styles.rowContainer}>
-        <TileTitle>{tier.title}</TileTitle>
-
-        <div>
-          {tier.rows.map((row, i) => {
-            return (
-              <ul key={`${k}-${i}`} className={styles.singleRow}>
-                {row.items
-                  .filter((item) => filters.includes(item.type))
-                  .map((item, j) =>
-                    item.type === "empty" ? (
-                      <li
-                        key={`${k}-${i}-${j}`}
-                        className={styles.emptyItemContainer}
-                      />
-                    ) : (
-                      <li
-                        key={`${k}-${i}-${j}`}
-                        className={styles.singleItemContainer}
-                      >
-                        <Tile
-                          item={item}
-                          handleClick={() => onClick(item.id, item.popupText)}
-                          checked={!!sessionStorage.getItem(item.id)}
-                        />
-                      </li>
-                    )
-                  )}
-              </ul>
-            );
-          })}
-        </div>
-      </div>
-      <hr />
-    </React.Fragment>
-  ));
-
 const renderGridTiers = (
   tiers: Tier[],
   onClick: (key: string, message?: string) => void,
@@ -155,8 +111,6 @@ export const Matrix: FC<MatrixData> = ({
     <PageRow>
       {renderItemLegends()}
       <h1>{title}</h1>
-      {/* {renderFlexTiers(tiers, handleItemClick, filters)} */}
-      {/* <div className={styles.break}>GÓRA FLEX, DÓŁ GRID</div> */}
       {renderGridTiers(tiers, handleItemClick, filters)}
       <Modal
         title={modalTitle}
