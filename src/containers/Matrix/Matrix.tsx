@@ -20,7 +20,7 @@ const renderGridTiers = (
           {tier.rows.map((row, b) => {
             return (
               <ul
-                key={`2-${a}-${b}`}
+                key={`${a}-${b}`}
                 className={styles[`singleRow-${row.items.length}`]}
               >
                 {row.items
@@ -28,18 +28,18 @@ const renderGridTiers = (
                   .map((item, c) =>
                     item.type === "empty" ? (
                       <li
-                        key={`2-${a}-${b}-${c}`}
+                        key={`${a}-${b}-${c}`}
                         className={styles.emptyItemContainer}
                       />
                     ) : (
                       <li
-                        key={`2-${a}-${b}-${c}`}
+                        key={`${a}-${b}-${c}`}
                         className={styles.singleItemContainer}
                       >
                         <Tile
                           item={item}
                           handleClick={() => onClick(item.id, item.popupText)}
-                          checked={!!sessionStorage.getItem(item.id)}
+                          checked={!!localStorage.getItem(item.id)}
                         />
                       </li>
                     )
@@ -73,13 +73,13 @@ export const Matrix: FC<MatrixData> = ({
   };
 
   const handleItemClick = (key: string, message?: string) => {
-    const storedItem = sessionStorage.getItem(key);
+    const storedItem = localStorage.getItem(key);
 
     if (storedItem) {
-      sessionStorage.removeItem(key);
+      localStorage.removeItem(key);
       setRerender(!rerender);
     } else {
-      sessionStorage.setItem(key, "clicked");
+      localStorage.setItem(key, "clicked");
       if (message) {
         setModalTitle(message);
         setModalOpen(!isModalOpen);

@@ -2,6 +2,9 @@ $break-point: 1080px;
 
 .wrapper {
     padding: 0 32px;
+    @media (max-width: $break-point) {
+    overflow: auto;
+    }
 }
 
 .itemLegendContainter {
@@ -60,39 +63,39 @@ $break-point: 1080px;
     padding: 0;
 }
 
+.singleRow-14 {
+    composes: singleRowGrid;
+    grid-template-columns: repeat(14, 110px);
+}
+
+.singleRow-13 {
+    composes: singleRowGrid;
+    grid-template-columns: repeat(13, 110px);
+}
+
 .singleRow-12 {
     composes: singleRowGrid;
-    @media (max-width: $break-point) {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-    }
+    grid-template-columns: repeat(12, 110px);
 }
 
 .singleRow-11 {
     composes: singleRowGrid;
-    @media (max-width: $break-point) {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-    }
+    grid-template-columns: repeat(11, 110px);
 }
 
 .singleRow-10 {
     composes: singleRowGrid;
-    @media (max-width: $break-point) {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-    }
+    grid-template-columns: repeat(10, 110px);
 }
 
 .singleRow-9 {
     composes: singleRowGrid;
-    @media (max-width: $break-point) {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
+    grid-template-columns: repeat(9, 110px);
 }
 
 .singleRow-8 {
     composes: singleRowGrid;
-    @media (max-width: $break-point) {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
+    grid-template-columns: repeat(8, 110px);
 }
 
 .break {

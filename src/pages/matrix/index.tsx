@@ -54,7 +54,7 @@ const mockData: MatrixData = {
               {
                 id: "13",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et molestie massa. Fusce efficitur ex.",
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et molestie massa. Fusce efficitur ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et molestie massa. Fusce efficitur ex.",
                 type: "default",
               },
               { id: "14", description: "Drugi", type: "normal" },

@@ -31,8 +31,9 @@ export const Tile: FC<TileProps> = ({
 }) => {
   const buttonStyle = {
     backgroundColor: getColor(type),
-    fontSize: 8,
     color: "black",
+    fontSize: 8,
+    padding: 0,
   };
   return (
     <Button
@@ -43,7 +44,7 @@ export const Tile: FC<TileProps> = ({
       onClick={handleClick}
       style={buttonStyle}
     >
-      {description}
+      <span className={styles.contentStyle}>{description}</span>
     </Button>
   );
 };

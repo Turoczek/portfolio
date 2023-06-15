@@ -11,7 +11,11 @@ export const Modal: FC<ModalProps> = ({
   children,
 }) => {
   return (
-    <ModalMui sx={{ display: "flex" }} open={isOpen} onClose={onChange}>
+    <ModalMui
+      sx={{ display: "flex", padding: 1 }}
+      open={isOpen}
+      onClose={onChange}
+    >
       <Box
         sx={{
           margin: "auto",

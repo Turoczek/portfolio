@@ -6,3 +6,10 @@
     composes: normal;
     opacity: 0.5;
 }
+
+.contentStyle {
+  max-height: 100%;
+  overflow-Y: auto;
+  overflow-X: hidden;
+  padding: 0 8px;
+};
